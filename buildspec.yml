@@ -1,0 +1,19 @@
+version: 0.2
+batch:
+  fast-fail: false
+  build-graph:
+    - identifier: build1
+      buildspec: build1.yml
+      env:
+        variables:
+          BUILD_ID: build1
+
+    - identifier: build2
+      buildspec: build2.yml
+      env:
+        variables:
+          BUILD_ID: build2
+phases:
+  build:
+    commands:
+      - echo batch build
